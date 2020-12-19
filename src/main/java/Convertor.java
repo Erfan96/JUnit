@@ -9,7 +9,7 @@ public class Convertor {
         int integer = Integer.parseInt(str);
 
 
-        if (integer > 32768 || integer < -32768)
+        if (integer > 32767 || integer < -32767)
             throw new Exception("Integer not valid !!!");
 
         else
@@ -24,15 +24,6 @@ public class Convertor {
                 return false;
        }
         return true;
-    }
-
-    public static void main(String[] args) {
-        try {
-            System.out.println(convertStringToInteger("123"));
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
-
     }
 }
 
