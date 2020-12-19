@@ -26,11 +26,14 @@ public class ConvertorTest {
 
     @Test(expected = Exception.class)
     public void convertStringToIntegerTest_failString() throws Exception {
-        Integer result = Convertor.convertStringToInteger("32768");
+        Integer result = Convertor.convertStringToInteger("32 760");
         Assert.assertEquals(32768, result.intValue());
 
-        Integer result2 = Convertor.convertStringToInteger("-32768");
+        Integer result2 = Convertor.convertStringToInteger("-1p2");
         Assert.assertEquals(-32768, result2.intValue());
+
+        Integer result3 = Convertor.convertStringToInteger("565 ");
+        Assert.assertEquals(565, result3.intValue());
     }
 
     @Test(expected = Exception.class)
