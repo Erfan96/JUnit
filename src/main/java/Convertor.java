@@ -8,7 +8,6 @@ public class Convertor {
 
         int integer = Integer.parseInt(str);
 
-
         if (integer > 32767 || integer < -32767)
             throw new Exception("Integer not valid !!!");
 
