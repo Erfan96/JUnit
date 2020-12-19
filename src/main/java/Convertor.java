@@ -2,14 +2,12 @@ public class Convertor {
 
     public static Integer convertStringToInteger(String str) throws Exception {
 
-        for (int i=0 ; i<str.length() ; i++){
-
-            if (!Character.isDigit(str.charAt(i)) && str.charAt(i) != '-')
+        if (!onlyNumber(str))
                 throw new Exception("String was incorrect !!!");
 
-        }
 
         int integer = Integer.parseInt(str);
+
 
         if (integer > 32768 || integer < -32768)
             throw new Exception("Integer not valid !!!");
