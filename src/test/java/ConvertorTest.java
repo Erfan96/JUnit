@@ -14,9 +14,29 @@ public class ConvertorTest {
         Integer result2 = Convertor.convertStringToInteger("32767");
         Assert.assertEquals(32767, result2.intValue());
 
-        //Integer result3 = Convertor.convertStringToInteger("32768");
-        // Assert.assertEquals(32768, result3.intValue());
+        Integer result3 = Convertor.convertStringToInteger("-32767");
+        Assert.assertEquals(-32767, result3.intValue());
 
+        Integer result4 = Convertor.convertStringToInteger("1630");
+        Assert.assertEquals(1630, result4.intValue());
+    }
+
+    @Test(expected = Exception.class)
+    public void convertStringToIntegerTest_failString() throws Exception {
+        Integer result = Convertor.convertStringToInteger("32768");
+        Assert.assertEquals(32768, result.intValue());
+
+        Integer result2 = Convertor.convertStringToInteger("-32768");
+        Assert.assertEquals(-32768, result2.intValue());
+    }
+
+    @Test(expected = Exception.class)
+    public void convertStringToIntegerTest_failInteger() throws Exception {
+        Integer result = Convertor.convertStringToInteger("56g5");
+        Assert.assertEquals(32768, result.intValue());
+
+        Integer result2 = Convertor.convertStringToInteger("-32768");
+        Assert.assertEquals(-32768, result2.intValue());
     }
 
     @Test
