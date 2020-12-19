@@ -20,8 +20,8 @@ public class ConvertorTest {
         Integer result4 = Convertor.convertStringToInteger("1630");
         Assert.assertEquals(1630, result4.intValue());
 
-        Integer result5 = Convertor.convertStringToInteger("2768");
-        Assert.assertEquals(2768, result5.intValue());
+        Integer result5 = Convertor.convertStringToInteger("10068");
+        Assert.assertEquals(10068, result5.intValue());
     }
 
     @Test(expected = Exception.class)
