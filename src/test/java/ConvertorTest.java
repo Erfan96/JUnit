@@ -38,11 +38,14 @@ public class ConvertorTest {
 
     @Test(expected = Exception.class)
     public void convertStringToIntegerTest_failInteger() throws Exception {
-        Integer result = Convertor.convertStringToInteger("56g5");
+        Integer result = Convertor.convertStringToInteger("32768");
         Assert.assertEquals(32768, result.intValue());
 
         Integer result2 = Convertor.convertStringToInteger("-32768");
         Assert.assertEquals(-32768, result2.intValue());
+
+        Integer result3 = Convertor.convertStringToInteger("41200");
+        Assert.assertEquals(41200, result3.intValue());
     }
 
     @Test
